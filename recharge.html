@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>WeUI</title>
+        <link rel="stylesheet" href="./css/weui.css"/>
+        <link rel="stylesheet" href="./css/example.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            img{
+                width:100%;
+                height: auto;
+                max-width: 100%;
+                display: block;
+            }
+
+        </style>
+
+    </head>
+    <body >
+        <div class="container" id="container"></div>
+        <!-- 我的余额 -->
+        <div class="jumbotron">
+            <div  style="text-align: center;">
+                <h4>我的余额</h4>
+                <h2>￥50</h2>
+            </div>
+        </div>
+
+        <!-- 充值金额 -->
+
+        <div class="page-header">
+            <h4>请选择充值金额</h4>
+        </div>
+        <div class="weui-grids" style="margin-left: 5%;margin-right: 5%;">
+            <a href="javascript:;" class="weui-grid btn-danger">
+                <p class="weui-grid__label">100元</p>
+                <p class="weui-grid__label">赠送50元</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <p class="weui-grid__label">300元</p>
+                <p class="weui-grid__label">赠送150元</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <p class="weui-grid__label">500元</p>
+                <p class="weui-grid__label">赠送250元</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <p class="weui-grid__label">1000元</p>
+                <p class="weui-grid__label">赠送500元</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <p class="weui-grid__label">3000元</p>
+                <p class="weui-grid__label">赠送1500元</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <p class="weui-grid__label">5000元</p>
+                <p class="weui-grid__label">赠送2500元</p>
+            </a>
+        </div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">其他金额</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入充值金额"/>
+                </div>
+                <div class="weui-cell__ft" >
+                    <button class="weui-vcode-btn" >赠送XXX元</button>
+                </div>
+            </div>
+        </div>
+        <!-- 选择支付方式 -->
+
+        <!-- 相关条款 -->
+        <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+            <span class="weui-agree__text">
+                阅读并同意<a href="javascript:void(0);">《相关条款》</a>
+            </span>
+        </label>
+
+        <!-- 确认支付 -->
+
+            <div class="page__bd page__bd_spacing">
+                <a href="./re_sucess.html" class="weui-btn weui-btn_primary">成功提示页</a>
+                <a href="./re_fail.html" class="weui-btn weui-btn_default">失败提示页</a>
+            </div>
+        <script type="text/html" id="tpl_msg_success">
+
+                <div class="weui-msg">
+                    <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+                    <div class="weui-msg__text-area">
+                        <h2 class="weui-msg__title">操作成功</h2>
+                        <p class="weui-msg__desc">内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现<a href="javascript:void(0);">文字链接</a></p>
+                    </div>
+                    <div class="weui-msg__opr-area">
+                        <p class="weui-btn-area">
+                            <a href="./home.html" class="weui-btn weui-btn_primary">推荐操作</a>
+                            <a href="javascript:history.back();" class="weui-btn weui-btn_default">辅助操作</a>
+                        </p>
+                    </div>
+                    <div class="weui-msg__extra-area">
+                        <div class="weui-footer">
+                            <p class="weui-footer__links">
+                                <a href="javascript:void(0);" class="weui-footer__link">底部链接文本</a>
+                            </p>
+                            <p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>
+                        </div>
+                    </div>
+                </div>
+
+        </script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/zepto.min.js"></script>
+        <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+        <script src="./js/example.js"></script>
+    </body>
+</html>
