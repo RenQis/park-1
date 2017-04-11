@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="./css/weui.css"/>
+    <link rel="stylesheet" href="./css/example.css"/>
+    <style>
+        img{
+            width:100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+        #_title{
+            align-content: center;
+        }
+    </style>
+
+</head>
+<body ontouchstart>
+    <div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+
+    <div class="container" id="container"></div>
+
+    <!-- 加载图片，并设置为自适应-->
+    <div class="weui-panel">
+        <img src="img/park1.png">
+    </div>
+
+    <div class="weui-cells">
+
+        <!--请输入电话号码 -->
+        <div class="weui-cell weui-cell_select weui-cell_select-before">
+            <div class="weui-cell__hd">
+                <select class="weui-select" name="select2">
+                    <option value="1">+86</option>
+                    <option value="2">+80</option>
+                    <option value="3">+84</option>
+                    <option value="4">+87</option>
+                </select>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码"/>
+            </div>
+
+        </div>
+
+        <!-- 请输入性别 -->
+    <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell__hd">
+            <label for="" class="weui-label">性别</label>
+        </div>
+        <div class="weui-cell__bd">
+            <select class="weui-select" name="select2">
+                <option value="1">男</option>
+                <option value="2">女</option>
+                <option value="3">保密</option>
+            </select>
+        </div>
+    </div>
+        <!-- 获取用户生日 -->
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="" class="weui-label">生日</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="date" value=""/>
+        </div>
+    </div>
+
+        <!-- 通过用户发送的验证码进行验证 -->
+        <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" placeholder="请输入验证码"/>
+            </div>
+            <div class="weui-cell__ft">
+                <button class="weui-vcode-btn">获取验证码</button>
+            </div>
+        </div>
+        <div class="weui-btn-area">
+            <a class="weui-btn weui-btn_primary" href="home.html" id="showTooltips">会员登陆</a>
+        </div>
+    </div>
+    <div class="weui-panel ">
+        <div style="text-align: center;" id="_title">
+            <div class="weui-panel__hd">
+                <h1 class="">会员特权</h1>
+            </div>
+            <div class="page__bd">
+                <section>
+                    <p><h3 class="title">1.成为会员可以享受投票折扣</h3></p>
+                </section>
+                <p>
+                    <h3 class="title">2.成为会员可以享受充值赠送</h3>
+                </p>
+                <p>
+                    <h3 class="title">3.成为会员可以享受生日免单</h3>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            var $sliderTrack = $('#sliderTrack'),
+                    $sliderHandler = $('#sliderHandler'),
+                    $sliderValue = $('#sliderValue');
+
+            var totalLen = $('#sliderInner').width(),
+                    startLeft = 0,
+                    startX = 0;
+
+            $sliderHandler
+                    .on('touchstart', function (e) {
+                        startLeft = parseInt($sliderHandler.css('left')) * totalLen / 100;
+                        startX = e.changedTouches[0].clientX;
+                    })
+                    .on('touchmove', function(e){
+                        var dist = startLeft + e.changedTouches[0].clientX - startX,
+                                percent;
+                        dist = dist < 0 ? 0 : dist > totalLen ? totalLen : dist;
+                        percent =  parseInt(dist / totalLen * 100);
+                        $sliderTrack.css('width', percent + '%');
+                        $sliderHandler.css('left', percent + '%');
+                        $sliderValue.text(percent);
+
+                        e.preventDefault();
+                    })
+            ;
+        });
+    </script>
+    <script src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="./js/example.js"></script>
+</body>
+</html>
